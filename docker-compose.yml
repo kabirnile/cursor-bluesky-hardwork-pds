@@ -1,0 +1,13 @@
+﻿version: '3.8'
+
+services:
+  pds:
+    image: ghcr.io/bluesky-social/pds:latest
+    container_name: itsmyturn-pds
+    restart: unless-stopped
+    env_file:
+      - pds.env
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data:/pds
